@@ -8,6 +8,12 @@ export const setCurrentUser = user => {
   }
 }
 
+export const logoutCurrentUser = user => {
+  return {
+    type: "LOGOUT_CURRENT_USER"
+  }
+}
+
 //////////////////////////////////
 // Asynchronous Action Creators //
 //////////////////////////////////
@@ -52,5 +58,15 @@ export const getCurrentUser = () => {
         }
       })
       .catch(console.log)
+  }
+}
+
+export const logout = () => {
+  return dispatch => {
+    dispatch(logoutCurrentUser())
+    return fetch("http://localhost:3001/api/v1/logout", {
+      credentials: "include",
+      method: "DELETE"
+    })
   }
 }
