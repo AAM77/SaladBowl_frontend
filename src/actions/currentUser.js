@@ -31,7 +31,7 @@ export const login = credentials => {
       .then(response => response.json())
       .then(user => {
         if (user.error) {
-          alert(user.error)
+          return user.error
         } else {
           dispatch(setCurrentUser(user))
         }
@@ -52,7 +52,7 @@ export const getCurrentUser = () => {
       .then(response => response.json())
       .then(user => {
         if (user.error) {
-          alert(user.error)
+          return user.error
         } else {
           dispatch(setCurrentUser(user))
         }
