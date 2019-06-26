@@ -8,7 +8,7 @@ import { getCurrentUser } from '../actions/currentUser.js';
 const LandingPage = ( { currentUser } ) => {
   return(
     <div>
-      <h1>THE LOGIN PAGE</h1>
+      <h1>Sign In</h1>
       {currentUser ? <Logout /> : <Login />}
     </div>
   )
