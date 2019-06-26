@@ -8,7 +8,9 @@ import Account from './components/Account.js';
 import SaladBars from './components/SaladBars.js';
 import SaladBowls from './components/SaladBowls.js';
 import NoMatch from './components/NoMatch.js';
-
+import Layout from './components/Layout.js';
+import { NavigationBar } from './components/NavigationBar.js';
+import { BackgroundJumbotron } from './components/Jumbotron.js';
 
 import './App.css';
 import { connect } from 'react-redux';
@@ -23,18 +25,22 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <Router>
-          <Switch>
-              <Route exact path="/" component={LandingPage} />
-              <Route exact path="/login" component={LoginPage} />
-              <Route exact path="/register" component={RegistrationPage} />
-              <Route exact path="/about" component={About} />
-              <Route exact path="/account" component={Account} />
-              <Route exact path="/salad_bars" component={SaladBars} />
-              <Route exact path="/salad_bowls" component={SaladBowls} />
-              <Route component={NoMatch} />
-          </Switch>
-        </Router>
+        <NavigationBar />
+        <BackgroundJumbotron />
+        <Layout>
+          <Router>
+            <Switch>
+                <Route exact path="/" component={LandingPage} />
+                <Route exact path="/login" component={LoginPage} />
+                <Route exact path="/register" component={RegistrationPage} />
+                <Route exact path="/about" component={About} />
+                <Route exact path="/account" component={Account} />
+                <Route exact path="/salad_bars" component={SaladBars} />
+                <Route exact path="/salad_bowls" component={SaladBowls} />
+                <Route component={NoMatch} />
+            </Switch>
+          </Router>
+        </Layout>
       </React.Fragment>
 
     );
