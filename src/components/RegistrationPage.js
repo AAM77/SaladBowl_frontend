@@ -1,5 +1,5 @@
 import React from 'react';
-import Login from './Login.js';
+import Signup from './Signup.js';
 import Logout from './Logout.js';
 import { connect } from 'react-redux';
 import { getCurrentUser } from '../actions/currentUser.js';
@@ -8,8 +8,8 @@ import { getCurrentUser } from '../actions/currentUser.js';
 const LandingPage = ( { currentUser } ) => {
   return(
     <div>
-      <h1>THE REGISTRATION PAGE</h1>
-      {currentUser ? <Logout /> : <Login />}
+      <h1>Register</h1>
+      {currentUser ? <Logout /> : <Signup />}
     </div>
   )
 }
