@@ -25,22 +25,23 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <NavigationBar />
-        <BackgroundJumbotron />
-        <Layout>
           <Router>
-            <Switch>
-                <Route exact path="/" component={LandingPage} />
-                <Route exact path="/login" component={LoginPage} />
-                <Route exact path="/register" component={RegistrationPage} />
-                <Route exact path="/about" component={About} />
-                <Route exact path="/account" component={Account} />
-                <Route exact path="/salad_bars" component={SaladBars} />
-                <Route exact path="/salad_bowls" component={SaladBowls} />
-                <Route component={NoMatch} />
-            </Switch>
+            <NavigationBar />
+            <BackgroundJumbotron />
+            <Layout>
+              <Switch>
+                  <Route exact path="/" component={LandingPage} />
+                  <Route exact path="/login" component={LoginPage} />
+                  <Route exact path="/register" component={RegistrationPage} />
+                  <Route exact path="/about" component={About} />
+                  <Route exact path="/account" component={Account} />
+                  <Route exact path="/salad_bars" component={SaladBars} />
+                  <Route exact path="/salad_bowls" component={SaladBowls} />
+                  <Route component={NoMatch} />
+              </Switch>
+            </Layout>
           </Router>
-        </Layout>
+
       </React.Fragment>
 
     );
