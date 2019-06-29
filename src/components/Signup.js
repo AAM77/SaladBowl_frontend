@@ -4,8 +4,8 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { updateLoginForm } from '../actions/loginForm.js';
-import { login } from "../actions/currentUser.js";
+import { updateSignupForm } from '../actions/signupForm.js';
+import { signup } from "../actions/newUser.js";
 
 
 const Styles = styled.div`
@@ -19,21 +19,22 @@ const Styles = styled.div`
   }
 `;
 
-const Signup = ( { loginFormData, updateLoginForm, login } ) => {
+const Signup = ( { signupFormData, updateSignupForm, signup } ) => {
 
   const handleInputChange = event => {
+
     const { name, value } = event.target
 
     const updatedFormInfo = {
-      ...loginFormData,
+      ...signupFormData,
       [name]: value
     }
-    updateLoginForm(updatedFormInfo)
+    updateSignupForm(updatedFormInfo)
   }
 
   const handleSubmit = event => {
     event.preventDefault();
-    login(loginFormData)
+    signup(signupFormData);
   }
 
 
@@ -44,21 +45,21 @@ const Signup = ( { loginFormData, updateLoginForm, login } ) => {
 
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Email</Form.Label>
-            <Form.Control placeholder="Enter Email" value={undefined} name="email" type="email" onChange={handleInputChange} />
+            <Form.Control placeholder="Enter Email" value={signupFormData.email} name="email" type="email" onChange={handleInputChange} />
           </Form.Group>
 
           <Form.Group controlId="formBasicUsername">
             <Form.Label>Username</Form.Label>
-            <Form.Control placeholder="Enter Username" value={undefined} name="username" type="text" onChange={handleInputChange} />
+            <Form.Control placeholder="Enter Username" value={signupFormData.username} name="username" type="text" onChange={handleInputChange} />
           </Form.Group>
 
           <Form.Group controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
-            <Form.Control placeholder="Enter Password" value={undefined} name="password" type="password" onChange={handleInputChange} />
+            <Form.Control placeholder="Enter Password" value={signupFormData.password} name="password" type="password" onChange={handleInputChange} />
           </Form.Group>
 
-          <Button variant="primary" value="Log In" type="submit">
-            Submit
+          <Button variant="primary" value="Create My Account" type="submit">
+            Create My Account
           </Button>
 
         </Form>
@@ -74,8 +75,8 @@ const Signup = ( { loginFormData, updateLoginForm, login } ) => {
 
 const mapStateToProps = state => {
   return {
-    loginFormData: state.loginForm
+    signupFormData: state.signupForm
   }
 }
 
-export default connect(mapStateToProps, { updateLoginForm, login }) (Signup);
+export default connect(mapStateToProps, { updateSignupForm, signup }) (Signup);
