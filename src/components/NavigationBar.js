@@ -1,5 +1,6 @@
 import React from 'react';
-import { Nav, Navbar } from 'react-bootstrap';
+import { Nav, Navbar, NavDropdown, Dropdown, NavItem } from 'react-bootstrap';
+import NavLink from 'react-bootstrap/NavLink';
 import { Link } from 'react-router-dom';
 //import { LinkContainer } from 'react-router-bootstrap';
 
@@ -13,10 +14,14 @@ const Styles = styled.div`
   }
 
   .navbar-brand, .navbar-nav .nav-link {
-    color: #bbb;
+    color: #efefef;
 
     &:hover {
       color: white;
+    }
+
+    &:focus {
+      color: #f57653;
     }
   }
 `;
@@ -32,49 +37,30 @@ export const NavigationBar = ({ location }) => {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
           <Nav.Item><Nav.Link as={Link} to="/about">About</Nav.Link></Nav.Item>
-          <Nav.Item><Nav.Link as={Link} to="/login">Log in</Nav.Link></Nav.Item>
+          <Nav.Item><Nav.Link as={Link} to="/login">Log In</Nav.Link></Nav.Item>
           <Nav.Item><Nav.Link as={Link} to="/register">Register</Nav.Link></Nav.Item>
+          <Dropdown as={NavItem} >
+            <Dropdown.Toggle as={NavLink}>Salad Options</Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item as={Link} to="/users/1">Suggest Breakfast Bowls</Dropdown.Item>
+              <Dropdown.Item as={Link} to="/users/2">Suggest Lunch Bowls</Dropdown.Item>
+              <Dropdown.Item as={Link} to="/users/3">Suggest Dinner Bowls</Dropdown.Item>
+              <Dropdown.Item as={Link} to="/users/4">Suggest a Salad Bar</Dropdown.Item>
+              <Dropdown.Item as={Link} to="/users/5">Create a Custom Bowl</Dropdown.Item>
+              <Dropdown.Item as={Link} to="/users/6">Customize Preferences</Dropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Divider />
+              <Dropdown.Item as={Link} to="/users/7">Favorite Bowls</Dropdown.Item>
+              <Dropdown.Item as={Link} to="/users/8">Account</Dropdown.Item>
+              <Dropdown.Item as={Link} to="/logout">Log Out</Dropdown.Item>
+
+
+
+            </Dropdown.Menu>
+          </Dropdown>;
         </Nav>
       </Navbar.Collapse>
     </Navbar>
     </Styles>
   )
 }
-
-// <Nav.Item><Nav.Link><Link to="/about">About</Link></Nav.Link></Nav.Item>
-// <Nav.Item><Nav.Link><Link to="/login">Log in</Link></Nav.Link></Nav.Item>
-// <Nav.Item><Nav.Link><Link to="/register">Register</Link></Nav.Link></Nav.Item>
-
-//
-// <Navbar expand="lg">
-//   <Navbar.Brand href="/">SaladBowl</Navbar.Brand>
-//   <Navbar.Toggle aria-controls="basic-navbar-nav" />
-//
-//
-//   <Navbar.Collapse id="basic-navbar-nav">
-//     <Nav className="ml-auto">
-//       <NavItem componentClass={Link} href="/about" to="/about" active={location.pathname === '/about'}>About</NavItem>
-//       <NavItem componentClass={Link} href="/login" to="/login" active={location.pathname === '/login'}>Login</NavItem>
-//       <NavItem componentClass={Link} href="/register" to="/register" active={location.pathname === '/register'}>Register</NavItem>
-//     </Nav>
-//   </Navbar.Collapse>
-// </Navbar>
-
-//as={Link} to="/"
-// <Nav className="ml-auto">
-//   <LinkContainer to="/about">
-//     <Nav.Item>About</Nav.Item>
-//   </LinkContainer>
-//
-//   <LinkContainer to="/login">
-//     <Nav.Item>Log In</Nav.Item>
-//   </LinkContainer>
-//
-//   <LinkContainer to="/register">
-//     <Nav.Item>Register</Nav.Item>
-//   </LinkContainer>
-// </Nav>
-
-// <Nav.Item><Nav.Link href="/about">About</Nav.Link></Nav.Item>
-// <Nav.Item><Nav.Link href="/login">Log in</Nav.Link></Nav.Item>
-// <Nav.Item><Nav.Link href="/register">Register</Nav.Link></Nav.Item>
