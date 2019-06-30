@@ -2,29 +2,7 @@ import React from 'react';
 import { Nav, Navbar, NavDropdown, Dropdown, NavItem } from 'react-bootstrap';
 import NavLink from 'react-bootstrap/NavLink';
 import { Link } from 'react-router-dom';
-//import { LinkContainer } from 'react-router-bootstrap';
-
-
-import styled from 'styled-components';
-
-const Styles = styled.div`
-  .navbar {
-    background-color: #222;
-    position: fixed top;
-  }
-
-  .navbar-brand, .navbar-nav .nav-link {
-    color: #efefef;
-
-    &:hover {
-      color: white;
-    }
-
-    &:focus {
-      color: #f57653;
-    }
-  }
-`;
+import { Styles } from './NavigationBarStyles.js';
 
 export const NavigationBarContainer = ({ location }) => {
   return (
@@ -53,9 +31,6 @@ export const NavigationBarContainer = ({ location }) => {
               <Dropdown.Item as={Link} to="/users/7">Favorite Bowls</Dropdown.Item>
               <Dropdown.Item as={Link} to="/users/8">Account</Dropdown.Item>
               <Dropdown.Item as={Link} to="/logout">Log Out</Dropdown.Item>
-
-
-
             </Dropdown.Menu>
           </Dropdown>;
         </Nav>
