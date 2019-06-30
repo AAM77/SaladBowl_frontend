@@ -26,10 +26,10 @@ const Styles = styled.div`
   }
 `;
 
-export const NavigationBar = ({ location }) => {
+export const NavigationBarContainer = ({ location }) => {
   return (
     <Styles>
-    <Navbar expand="lg">
+    <Navbar expand="lg" className="fixed-top">
       <Navbar.Brand as={Link} to="/">SaladBowl</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
@@ -41,7 +41,7 @@ export const NavigationBar = ({ location }) => {
           <Nav.Item><Nav.Link as={Link} to="/register">Register</Nav.Link></Nav.Item>
           <Dropdown as={NavItem} >
             <Dropdown.Toggle as={NavLink}>Salad Options</Dropdown.Toggle>
-            <Dropdown.Menu>
+            <Dropdown.Menu className="dropdown-menu-right">
               <Dropdown.Item as={Link} to="/users/1">Suggest Breakfast Bowls</Dropdown.Item>
               <Dropdown.Item as={Link} to="/users/2">Suggest Lunch Bowls</Dropdown.Item>
               <Dropdown.Item as={Link} to="/users/3">Suggest Dinner Bowls</Dropdown.Item>
