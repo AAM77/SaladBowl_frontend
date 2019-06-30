@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Account = () => {
+const AccountContainer = () => {
   return(
     <div>
      <h1>THE ACCOUNT DETAILS PAGE</h1>
@@ -9,4 +9,4 @@ const Account = () => {
   )
 }
 
-export default Account;
+export default AccountContainer;
