@@ -1,23 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { updateSignupForm } from '../../actions/signupForm.js';
 import { signup } from "../../actions/newUser.js";
-
-
-const Styles = styled.div`
-  .signup-form {
-    display: inline-block;
-    padding-bottom: 56px;
-  }
-
-  h3 {
-    color: #efefef
-  }
-`;
+import { Styles } from './SignupStyles.js';
 
 const Signup = ( { signupFormData, updateSignupForm, signup } ) => {
 
