@@ -1,23 +1,7 @@
 import React from 'react';
 import { ButtonToolbar, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
-
-const Styles = styled.div`
-  #salad-bar-button {
-    display: inline-block;
-    padding: 25px 0px 50px 0px;
-  }
-
-  #user-page-div {
-    display: inline-block;
-    padding: 50px 0px 25px 0px;
-  }
-
-  #url-link {
-    text-decoration: none;
-  }
-`;
+import { Styles } from './UserHomeContainerStyles.js';
 
 
 const UserHomeContainer = () => {
