@@ -2,21 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { updateLoginForm } from '../../actions/loginForm.js';
 import { login } from "../../actions/currentUser.js";
-import styled from 'styled-components';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
-
-const Styles = styled.div`
-  .login-form {
-    display: inline-block;
-    padding-bottom: 56px;
-  }
-
-  h3 {
-    color: #efefef
-  }
-`;
+import { Styles } from './LoginStyles.js';
 
 const Login = ( { loginFormData, updateLoginForm, login } ) => {
 
