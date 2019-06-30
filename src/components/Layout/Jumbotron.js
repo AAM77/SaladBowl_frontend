@@ -2,11 +2,11 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import styled from 'styled-components';
-import flowerSalad from '../assets/images/flower_salad.jpg';
-import fruitSaladGalore from '../assets/images/fruit_salad_galore.jpg';
-import greenSalad from '../assets/images/green_salad.jpg';
-import makingSalad from '../assets/images/making_salad.jpg';
-import saladBowls from '../assets/images/salad_bowls.jpg';
+import flowerSalad from '../../assets/images/flower_salad.jpg';
+import fruitSaladGalore from '../../assets/images/fruit_salad_galore.jpg';
+import greenSalad from '../../assets/images/green_salad.jpg';
+import makingSalad from '../../assets/images/making_salad.jpg';
+import saladBowls from '../../assets/images/salad_bowls.jpg';
 
 const images = [
   flowerSalad,
