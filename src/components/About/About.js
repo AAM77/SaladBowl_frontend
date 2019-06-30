@@ -1,23 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const Styles = styled.div`
-  .about-container {
-    padding-top: 25px;
-    padding-bottom: 25px;
-    text-align: center;
-  }
-
-  .about-paragraph {
-    width: 545px;
-    display: inline-block;
-    padding-top: 25px;
-  }
-
-  h1, p {
-    color: #efefef
-  }
-`;
+import { Styles } from './AboutStyles.js'
 
 
 const About = () => {
