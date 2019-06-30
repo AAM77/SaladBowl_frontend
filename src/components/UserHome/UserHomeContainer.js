@@ -11,7 +11,7 @@ const Styles = styled.div`
 
   #user-page-div {
     display: inline-block;
-    padding: 25px;
+    padding: 50px 0px 25px 0px;
   }
 
   #url-link {
@@ -20,22 +20,23 @@ const Styles = styled.div`
 `;
 
 
-const UserPage = () => {
+const UserHomeContainer = () => {
   return(
     <Styles>
       <div id="user-page-div">
+        <h1>Welcome, User!</h1>
+        <h4>Your location: U.S.</h4>
+        <div id="salad-bar-button">
+          <Link to="/register" id="url-link">
+            <ButtonToolbar>
+              <Button variant="warning">Find a Salad Bar Near You</Button>
+            </ButtonToolbar>
+          </Link>
+        </div>
       </div>
-      <h1>Welcome, User!</h1>
-      <h4>Your location: U.S.</h4>
-      <div id="salad-bar-button">
-        <Link to="/register" id="url-link">
-          <ButtonToolbar>
-            <Button variant="warning">Find a Salad Bar Near You</Button>
-          </ButtonToolbar>
-        </Link>
-      </div>
+
     </Styles>
   )
 }
 
-export default UserPage;
+export default UserHomeContainer;
