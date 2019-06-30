@@ -1,8 +1,8 @@
 import React from 'react';
 import Signup from './Signup.js';
-import Logout from './Logout.js';
+import Logout from '../Login/Logout.js';
 import { connect } from 'react-redux';
-import { getCurrentUser } from '../actions/currentUser.js';
+import { getCurrentUser } from '../../actions/currentUser.js';
 
 
 const LandingPage = ( { currentUser } ) => {

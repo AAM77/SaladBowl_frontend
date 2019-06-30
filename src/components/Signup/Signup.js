@@ -4,8 +4,8 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { updateSignupForm } from '../actions/signupForm.js';
-import { signup } from "../actions/newUser.js";
+import { updateSignupForm } from '../../actions/signupForm.js';
+import { signup } from "../../actions/newUser.js";
 
 
 const Styles = styled.div`
