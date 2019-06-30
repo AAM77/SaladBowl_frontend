@@ -15,7 +15,7 @@ import SaladBowls from '../Options/SaladBowls.js'; //THIS IS SIMILAR TO THE OPTI
 import OptionsContainer from '../Options/OptionsContainer.js';
 import NoMatch from '../NoMatch/NoMatch.js';
 import Layout from '../Layout/Layout.js';
-import { NavigationBarContainer } from '../NavigationBar/NavigationBarContainer.js';
+import NavigationBarContainer  from '../NavigationBar/NavigationBarContainer.js';
 import { BackgroundJumbotron } from '../Layout/Jumbotron.js';
 import Background from '../Layout/Background.js';
 
