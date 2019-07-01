@@ -1,23 +1,67 @@
-import React from 'react';
-import Signup from './Signup.js';
+import React, { Component } from 'react';
+import SignupForm from './SignupForm.js';
 import Logout from '../Login/Logout.js';
 import { connect } from 'react-redux';
 import { getCurrentUser } from '../../actions/currentUser.js';
+import { updateSignupForm } from '../../actions/signupForm.js';
+import { signup } from "../../actions/newUser.js";
+import { withRouter } from 'react-router-dom';
 
 
-const LandingPage = ( { currentUser } ) => {
-  return(
-    <div>
-      <h1>Register</h1>
-      {currentUser ? <Logout /> : <Signup />}
-    </div>
-  )
+class SignupContainer extends Component {
+
+  handleInputChange = (event) => {
+    const { name, value } = event.target
+
+    const updatedFormInfo = {
+      ...this.props.signupFormData,
+      [name]: value
+    }
+
+    this.props.updateSignupForm(updatedFormInfo);
+  }
+
+  handleSubmit = event => {
+    event.preventDefault();
+    this.props.signup(this.props.signupFormData);
+
+    //this.props.history.push('/login');
+  }
+
+  render() {
+    const {
+      signupFormData,
+      currentUser,
+      updateSignupForm,
+      signup
+     } = this.props;
+
+    return(
+      <div>
+        <h1>Register</h1>
+        {
+          currentUser ?
+          <Logout /> :
+          <SignupForm
+            signupFormData={signupFormData}
+            updateSignupForm={updateSignupForm}
+            signup={signup}
+            handleSubmit={this.handleSubmit}
+            handleInputChange={this.handleInputChange}
+          />
+        }
+      </div>
+    )
+  }
 }
 
+
+// = ( { currentUser } ) =>
 const mapStateToProps = state => {
-  return{
+  return {
+    signupFormData: state.signupForm,
     currentUser: state.currentUser
   }
 }
 
-export default connect(mapStateToProps, { getCurrentUser }) (LandingPage);
+export default connect(mapStateToProps, { updateSignupForm, signup, getCurrentUser }) (withRouter(SignupContainer));
