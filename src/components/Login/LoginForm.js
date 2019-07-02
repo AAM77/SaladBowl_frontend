@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import { Styles } from './LoginStyles.js';
 //import LoginContainer from '../Login/LoginContainer.js';
 
-const Login = ( { loginFormData, updateLoginForm, login, handleSubmit, handleInputChange } ) => {
+const LoginForm = ( { loginFormData, updateLoginForm, login, handleSubmit, handleInputChange } ) => {
 
   // const handleInputChange = event => {
   //   const { name, value } = event.target
@@ -56,4 +56,4 @@ const Login = ( { loginFormData, updateLoginForm, login, handleSubmit, handleInp
   )
 }
 
-export default Login;
+export default LoginForm;
