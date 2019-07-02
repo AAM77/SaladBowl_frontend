@@ -9,15 +9,24 @@ const About = () => {
         <h1>About SaladBowl</h1>
         <div className="about-paragraph">
         <p>
-          We all want to eat healthy. Sometimes, though, it seems like too much work.
+          We all want to eat healthy.<br />
+          Sometimes, though, it seems like too much work.
+        </p>
+        <p>
           First, we have to figure out what to eat. Then, we need to figure out
           whether we want to make something or purchase it. Once we figure that out,
           we need to either learn how to make it or find a place that sells it.
+        </p>
 
-          Decisions upon decisions! It's so tiresome that we lose all motivation.
 
-          I created SaladBowl to help with this. It is meant to decrease the amount
-          of decisions you need to make so that you can get to having a healthy meal.
+        <p>
+          <strong>Decisions upon decisions!</strong><br />
+          It's so tiresome that we lose all motivation.
+        </p>
+
+        <p>
+          I created SaladBowl to help with this.
+          Its purpose it to help you skip all that decision making so focus on having a healthy meal.
         </p>
         </div>
       </div>
