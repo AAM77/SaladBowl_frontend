@@ -1,3 +1,5 @@
+import { resetForm } from './resetForm.js'
+
 /////////////////////////////////
 // Synchronous Action Creators //
 /////////////////////////////////
@@ -18,7 +20,7 @@ export const logoutCurrentUser = user => {
 // Asynchronous Action Creators //
 //////////////////////////////////
 
-export const login = credentials => {
+export const login = (credentials, history) => {
   return dispatch => {
     return fetch("http://localhost:3001/api/v1/login", {
       credentials: "include",
@@ -28,12 +30,14 @@ export const login = credentials => {
       },
       body: JSON.stringify(credentials)
     })
-      .then(response => response.json())
-      .then(user => {
-        if (user.error) {
-          return user.error
+      .then(r => r.json())
+      .then(response => {
+        if (response.error) {
+          alert(response.error)
         } else {
-          dispatch(setCurrentUser(user))
+          dispatch(setCurrentUser(response))
+          dispatch(resetForm())
+          history.push(`/users/${response.id}`)
         }
       })
       .catch(console.log)
