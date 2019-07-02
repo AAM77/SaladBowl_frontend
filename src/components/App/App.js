@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getCurrentUser } from '../../actions/currentUser.js';
 
@@ -60,4 +61,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { getCurrentUser }) (App);
+export default withRouter(connect(mapStateToProps, { getCurrentUser }) (App));
