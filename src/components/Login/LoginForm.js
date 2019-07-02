@@ -2,7 +2,7 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
-import { Styles } from './LoginStyles.js';
+import { Styles } from './LoginFormStyles.js';
 
 const LoginForm = ( { loginFormData, updateLoginForm, login, handleSubmit, handleInputChange } ) => {
 
