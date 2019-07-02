@@ -21,9 +21,7 @@ class LandingPage extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.login(this.props.loginFormData, this.props.history)
-    //return(<LoginContainer />)
   }
-  // = ( { currentUser, loginFormData, updateLoginForm, login } ) =>
 
   render() {
     const {
