@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Login from './Login.js';
+import LoginForm from './LoginForm.js';
 import Logout from './Logout.js';
 import { connect } from 'react-redux';
 import { login, getCurrentUser } from '../../actions/currentUser.js';
@@ -37,7 +37,7 @@ class LandingPage extends Component {
       <div>
         <h1>Sign In</h1>
         {currentUser ? <Logout /> :
-          <Login
+          <LoginForm
             loginFormData={loginFormData}
             updateLoginForm={updateLoginForm}
             login={login}
