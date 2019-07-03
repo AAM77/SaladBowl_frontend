@@ -31,7 +31,6 @@ export const signup = (credentials, history) => {
           alert(response.error)
         } else {
           dispatch(createNewUser(response))
-          debugger;
           dispatch(setCurrentUser(response))
           dispatch(resetForm())
           history.push(`/users/${response.id}`)
