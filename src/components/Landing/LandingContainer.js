@@ -1,17 +1,23 @@
-import React from 'react';
-import LoginContainer from '../Login/LoginContainer.js';
-import Logout from '../Login/Logout.js';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getCurrentUser } from '../../actions/currentUser.js';
+import { withRouter } from 'react-router-dom';
 
 
-const LandingContainer = ( { currentUser, history } ) => {
-  return(
-    <div>
-      <h1>THE LANDING PAGE</h1>
-      {currentUser ? history.push('/users/currentUser.id') : <LoginContainer />}
-    </div>
-  )
+class LandingContainer extends Component {
+
+  render() {
+    const {
+      currentUser,
+      history
+    } = this.props
+
+    return(
+      <div>
+        <h1>THE LANDING PAGE</h1>
+        {currentUser ? history.push(`/users/${currentUser.id}`) : <h3>Please Sign in</h3>}
+      </div>
+    )
+  }
 }
 
 const mapStateToProps = state => {
@@ -20,4 +26,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { getCurrentUser }) (LandingContainer);
+export default withRouter(connect(mapStateToProps) (LandingContainer));
