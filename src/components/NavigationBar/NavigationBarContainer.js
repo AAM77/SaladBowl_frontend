@@ -5,16 +5,25 @@ import { Link } from 'react-router-dom';
 import { Styles } from './NavigationBarStyles.js';
 import { connect } from 'react-redux';
 
+import { logout } from '../../actions/currentUser.js';
+import { withRouter } from 'react-router-dom';
+
 class NavigationBarContainer extends Component {
+
+  handleClick = (event) => {
+    event.preventDefault()
+    this.props.logout()
+    this.props.history.push('/')
+  }
 
   currentUserOptions = () => {
     return(
       <Dropdown as={NavItem}>
         <Dropdown.Toggle as={NavLink}>Salad Options</Dropdown.Toggle>
         <Dropdown.Menu className="dropdown-menu-right">
-          <Dropdown.Item as={Link} to="/users/1">Suggest Breakfast Bowls</Dropdown.Item>
-          <Dropdown.Item as={Link} to="/users/2">Suggest Lunch Bowls</Dropdown.Item>
-          <Dropdown.Item as={Link} to="/users/3">Suggest Dinner Bowls</Dropdown.Item>
+          <Dropdown.Item as={Link} to="/options">Suggest Breakfast Bowls</Dropdown.Item>
+          <Dropdown.Item as={Link} to="/options">Suggest Lunch Bowls</Dropdown.Item>
+          <Dropdown.Item as={Link} to="/options">Suggest Dinner Bowls</Dropdown.Item>
           <Dropdown.Item as={Link} to="/users/4">Suggest a Salad Bar</Dropdown.Item>
           <Dropdown.Item as={Link} to="/users/5">Create a Custom Bowl</Dropdown.Item>
           <Dropdown.Item as={Link} to="/users/6">Customize Preferences</Dropdown.Item>
@@ -22,7 +31,7 @@ class NavigationBarContainer extends Component {
           <NavDropdown.Divider />
           <Dropdown.Item as={Link} to="/users/7">Favorite Bowls</Dropdown.Item>
           <Dropdown.Item as={Link} to="/users/8">Account</Dropdown.Item>
-          <Dropdown.Item as={Link} to="/logout">Log Out</Dropdown.Item>
+          <Dropdown.Item as={Link} onClick={this.handleClick}>Log Out</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
     )
@@ -60,4 +69,4 @@ const mapStateToProps = (state) => {
   return { currentUser: state.currentUser }
 }
 
-export default connect(mapStateToProps) (NavigationBarContainer);
+export default withRouter(connect(mapStateToProps, { logout }) (NavigationBarContainer));
