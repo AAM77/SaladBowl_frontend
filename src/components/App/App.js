@@ -7,8 +7,8 @@ import { getCurrentUser } from '../../actions/currentUser.js';
 
 import About from '../About/About.js';
 import LandingContainer from '../Landing/LandingContainer.js';
-import LoginContainer from '../Login/LoginContainer.js';
 import SignupContainer from '../Signup/SignupContainer.js';
+import LoginContainer from '../Login/LoginContainer.js';
 import UserHomeContainer from '../UserHome/UserHomeContainer.js';
 import AccountContainer from '../Account/AccountContainer.js';
 import SaladBars from '../Options/SaladBars.js';
@@ -43,12 +43,11 @@ class App extends Component {
                   <Route exact path="/salad_bars" component={SaladBars} />
                   <Route exact path="/salad_bowls" component={SaladBowls} />
                   <Route exact path="/users/:id" component={UserHomeContainer} />
-                  <Route exact page="/options" component={OptionsContainer} />
+                  <Route exact path="/options" component={OptionsContainer} />
                   <Route component={NoMatch} />
               </Switch>
             </Layout>
           </Router>
-
       </React.Fragment>
 
     );
