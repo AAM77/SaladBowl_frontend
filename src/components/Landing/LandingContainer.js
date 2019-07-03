@@ -5,11 +5,11 @@ import { connect } from 'react-redux';
 import { getCurrentUser } from '../../actions/currentUser.js';
 
 
-const LandingContainer = ( { currentUser } ) => {
+const LandingContainer = ( { currentUser, history } ) => {
   return(
     <div>
       <h1>THE LANDING PAGE</h1>
-      {currentUser ? <Logout /> : <LoginContainer />}
+      {currentUser ? history.push('/users/currentUser.id') : <LoginContainer />}
     </div>
   )
 }
