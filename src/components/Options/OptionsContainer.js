@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
-//import { Container, Col, Row } from 'react-bootstrap';
-// import { Link } from 'react-router-dom';
 import { Styles } from './OptionsContainerStyles.js';
 import { connect } from 'react-redux';
 import { getAllSaladBowls } from '../../actions/salad_bowls.js';
-// import BreakfastSaladBowls from './BreakfastSaladBowls.js';
-// import LunchSaladBowls from './LunchSaladBowls.js';
-// import DinnerSaladBowls from './DinnerSaladBowls.js';
 import SaladBowls from './SaladBowls.js';
 
 class OptionsContainer extends Component {
