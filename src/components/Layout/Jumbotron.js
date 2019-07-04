@@ -11,7 +11,7 @@ export const BackgroundJumbotron = () => {
         <div className="overlay"></div>
         <Container>
           <h1>Welcome</h1>
-          <p>Make the perfect salad bowl!</p>
+          <p>Choose your perfect salad bowl!</p>
         </Container>
       </Jumbotron>
     </Styles>
