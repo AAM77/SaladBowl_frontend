@@ -5,8 +5,8 @@ import { Styles } from './OptionsContainerStyles.js';
 import { connect } from 'react-redux';
 import { getAllSaladBowls } from '../../actions/salad_bowls.js';
 import BreakfastSaladBowls from './BreakfastSaladBowls.js';
-import LunchSaladBowls from './BreakfastSaladBowls.js';
-import DinnerSaladBowls from './BreakfastSaladBowls.js';
+import LunchSaladBowls from './LunchSaladBowls.js';
+import DinnerSaladBowls from './DinnerSaladBowls.js';
 
 class OptionsContainer extends Component {
 
@@ -33,33 +33,13 @@ class OptionsContainer extends Component {
   render() {
     return(
       <Styles>
-        {this.mealSelection()}
-
-        <div>
           {
-            this.props.allSaladBowls ?
-            <ul>
-
-            </ul> :
-            <p>Loading All Salad Bowls</p>
+            this.props.mealType ? this.mealSelection() : <p>Loading Salad Bowls</p>
           }
-        </div>
       </Styles>
     )
   }
 }
-//
-// {
-//   this.props.allBreakfastBowls ?
-//   <div className="rows-and-columns">
-//     <Container>
-//       <Row className="row-of-columns">
-//         {this.breakfastBowls()}
-//       </Row>
-//     </Container>
-//   </div> :
-//   <p>Loading items</p>
-// }
 
 const mapStateToProps = (state) => {
   return {
