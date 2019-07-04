@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import SaladBowlCard from './SaladBowlCard.js'
 
-const LunchSaladBowls = ( { saladBowls } ) => {
+const SaladBowls = ( { saladBowls } ) => {
 
   const parseSaladBowls = () => {
     return saladBowls.map ( saladBowl => <Col sm className="column-text" key={saladBowl.id}><SaladBowlCard saladBowl={saladBowl} /></Col>)
@@ -24,4 +24,4 @@ const LunchSaladBowls = ( { saladBowls } ) => {
   )
 }
 
-export default LunchSaladBowls;
+export default SaladBowls;
