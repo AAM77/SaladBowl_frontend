@@ -5,8 +5,13 @@ import SaladBowlCard from './SaladBowlCard.js'
 const SaladBowls = ( { saladBowls } ) => {
 
   const parseSaladBowls = () => {
-    return saladBowls.map ( saladBowl => <Col sm className="column-text" key={saladBowl.id}><SaladBowlCard saladBowl={saladBowl} /></Col>)
+    const bowls = saladBowls.slice(0);
+    const shuffled = bowls.sort(() => 0.5 - Math.random());
+    let bowl_suggestions = shuffled.slice(0, 4);
+
+    return bowl_suggestions.map ( saladBowl => <Col sm className="column-text" key={saladBowl.id}><SaladBowlCard saladBowl={saladBowl} /></Col>)
   }
+  
   return(
     <div>
       {
