@@ -6,14 +6,21 @@ import { Styles } from './NavigationBarStyles.js';
 import { connect } from 'react-redux';
 
 import { logout } from '../../actions/currentUser.js';
+import { setMealType } from '../../actions/mealType.js';
 import { withRouter } from 'react-router-dom';
 
 class NavigationBarContainer extends Component {
 
-  handleClick = (event) => {
-    event.preventDefault()
+  handleLogoutClick = (event) => {
+    event.preventDefault();
     this.props.logout()
     this.props.history.push('/')
+  }
+
+  handleSaladSelectionClick = (event, mealType) => {
+    event.preventDefault();
+    this.props.setMealType(mealType);
+    this.props.history.push('/options')
   }
 
   currentUserOptions = () => {
@@ -21,17 +28,17 @@ class NavigationBarContainer extends Component {
       <Dropdown as={NavItem}>
         <Dropdown.Toggle as={NavLink}>Salad Options</Dropdown.Toggle>
         <Dropdown.Menu className="dropdown-menu-right">
-          <Dropdown.Item as={Link} to="/options">Suggest Breakfast Bowls</Dropdown.Item>
-          <Dropdown.Item as={Link} to="/options">Suggest Lunch Bowls</Dropdown.Item>
-          <Dropdown.Item as={Link} to="/options">Suggest Dinner Bowls</Dropdown.Item>
-          <Dropdown.Item as={Link} to="/users/4">Suggest a Salad Bar</Dropdown.Item>
-          <Dropdown.Item as={Link} to="/users/5">Create a Custom Bowl</Dropdown.Item>
-          <Dropdown.Item as={Link} to="/users/6">Customize Preferences</Dropdown.Item>
+          <Dropdown.Item onClick={(event) => this.handleSaladSelectionClick(event, 'breakfast')}>Suggest Breakfast Bowls</Dropdown.Item>
+          <Dropdown.Item onClick={(event) => this.handleSaladSelectionClick(event, 'lunch')}>Suggest Lunch Bowls</Dropdown.Item>
+          <Dropdown.Item onClick={(event) => this.handleSaladSelectionClick(event, 'dinner')}>Suggest Dinner Bowls</Dropdown.Item>
+          <Dropdown.Item as={Link} to="/">Suggest a Salad Bar</Dropdown.Item>
+          <Dropdown.Item as={Link} to="/">Create a Custom Bowl</Dropdown.Item>
+          <Dropdown.Item as={Link} to="/">Customize Preferences</Dropdown.Item>
           <NavDropdown.Divider />
           <NavDropdown.Divider />
-          <Dropdown.Item as={Link} to="/users/7">Favorite Bowls</Dropdown.Item>
-          <Dropdown.Item as={Link} to="/users/8">Account</Dropdown.Item>
-          <Dropdown.Item as={Link} onClick={this.handleClick}>Log Out</Dropdown.Item>
+          <Dropdown.Item as={Link} to="/">Favorite Bowls</Dropdown.Item>
+          <Dropdown.Item as={Link} to="/">Account</Dropdown.Item>
+          <Dropdown.Item onClick={this.handleClick}>Log Out</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
     )
@@ -69,4 +76,4 @@ const mapStateToProps = (state) => {
   return { currentUser: state.currentUser }
 }
 
-export default withRouter(connect(mapStateToProps, { logout }) (NavigationBarContainer));
+export default withRouter(connect(mapStateToProps, { logout, setMealType }) (NavigationBarContainer));
