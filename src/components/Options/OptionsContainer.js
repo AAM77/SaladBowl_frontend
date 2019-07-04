@@ -4,9 +4,10 @@ import React, { Component } from 'react';
 import { Styles } from './OptionsContainerStyles.js';
 import { connect } from 'react-redux';
 import { getAllSaladBowls } from '../../actions/salad_bowls.js';
-import BreakfastSaladBowls from './BreakfastSaladBowls.js';
-import LunchSaladBowls from './LunchSaladBowls.js';
-import DinnerSaladBowls from './DinnerSaladBowls.js';
+// import BreakfastSaladBowls from './BreakfastSaladBowls.js';
+// import LunchSaladBowls from './LunchSaladBowls.js';
+// import DinnerSaladBowls from './DinnerSaladBowls.js';
+import SaladBowls from './SaladBowls.js';
 
 class OptionsContainer extends Component {
 
@@ -15,27 +16,25 @@ class OptionsContainer extends Component {
   }
 
   mealSelection = () => {
-    let renderedComponent;
+    let selectedMealBowls;
 
     if (this.props.mealType === "breakfast") {
-      renderedComponent = <BreakfastSaladBowls allBreakfastBowls={this.props.allBreakfastBowls} />
+      selectedMealBowls = this.props.allBreakfastBowls
     } else if (this.props.mealType === "lunch") {
-      renderedComponent =  <LunchSaladBowls allLunchBowls={this.props.allLunchBowls} />
+      selectedMealBowls =  this.props.allLunchBowls
     } else if (this.props.mealType === "dinner") {
-      renderedComponent =  <DinnerSaladBowls allDinnerBowls={this.props.allDinnerBowls}  />
-    } else {
-      renderedComponent = <h1>No Meals</h1>
+      selectedMealBowls =  this.props.allDinnerBowls
     }
 
-    return renderedComponent
+    return <SaladBowls saladBowls={selectedMealBowls} />
   }
 
   render() {
     return(
       <Styles>
-          {
-            this.props.mealType ? this.mealSelection() : <p>Loading Salad Bowls</p>
-          }
+        {
+          this.props.mealType ? this.mealSelection() : <p>Loading Salad Bowls</p>
+        }
       </Styles>
     )
   }
