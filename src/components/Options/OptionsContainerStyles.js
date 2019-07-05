@@ -17,12 +17,12 @@ export const Styles = styled.div`
 
   .rows-and-columns {
     width: 1000px;
+    padding-bottom: 50px;
   }
 
   .row-of-columns {
     padding: 50px 0px 0px 100px;
   }
-
 
   .column-text {
     padding: 25px 0px 25px 0px;
