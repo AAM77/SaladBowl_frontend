@@ -38,7 +38,7 @@ class NavigationBarContainer extends Component {
           <NavDropdown.Divider />
           <Dropdown.Item as={Link} to="/">Favorite Bowls</Dropdown.Item>
           <Dropdown.Item as={Link} to="/">Account</Dropdown.Item>
-          <Dropdown.Item onClick={this.handleClick}>Log Out</Dropdown.Item>
+          <Dropdown.Item onClick={this.handleLogoutClick}>Log Out</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
     )
