@@ -14,6 +14,7 @@ import AccountContainer from '../Account/AccountContainer.js';
 import SaladBars from '../Options/SaladBars.js';
 import SaladBowls from '../Options/SaladBowls.js'; //THIS IS SIMILAR TO THE OPTIONS PAGE... REPLACE or INSERT INTO OPTIONS PAGE
 import OptionsContainer from '../Options/OptionsContainer.js';
+import RecipeFormContainer from '../RecipeForm/RecipeFormContainer.js';
 import NoMatch from '../NoMatch/NoMatch.js';
 import Layout from '../Layout/Layout.js';
 import NavigationBarContainer  from '../NavigationBar/NavigationBarContainer.js';
@@ -44,6 +45,7 @@ class App extends Component {
                   <Route exact path="/salad_bowls" component={SaladBowls} />
                   <Route exact path="/users/:id" component={UserHomeContainer} />
                   <Route exact path="/options" component={OptionsContainer} />
+                  <Route exact path="/new_recipe_form" component={RecipeFormContainer} />
                   <Route component={NoMatch} />
               </Switch>
             </Layout>
