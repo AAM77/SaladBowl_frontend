@@ -32,7 +32,7 @@ class NavigationBarContainer extends Component {
           <Dropdown.Item onClick={(event) => this.handleSaladSelectionClick(event, 'lunch')}>Suggest Lunch Bowls</Dropdown.Item>
           <Dropdown.Item onClick={(event) => this.handleSaladSelectionClick(event, 'dinner')}>Suggest Dinner Bowls</Dropdown.Item>
           <Dropdown.Item as={Link} to="/">Suggest a Salad Bar</Dropdown.Item>
-          <Dropdown.Item as={Link} to="/">Create a Custom Bowl</Dropdown.Item>
+          <Dropdown.Item as={Link} to="/new_recipe_form">Submit a New Recipe</Dropdown.Item>
           <Dropdown.Item as={Link} to="/">Customize Preferences</Dropdown.Item>
           <NavDropdown.Divider />
           <NavDropdown.Divider />
