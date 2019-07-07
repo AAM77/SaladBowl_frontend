@@ -7,6 +7,10 @@ export const Styles = styled.div`
   }
 
   h3 {
-    color: #efefef
+    color: #efefef;
+  }
+
+  Form {
+    color: #efefef;
   }
 `;
