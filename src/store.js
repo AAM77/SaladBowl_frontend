@@ -3,6 +3,7 @@ import usersReducer from './reducers/users.js';
 import currentUserReducer from './reducers/currentUser.js';
 import loginFormReducer from './reducers/loginForm.js';
 import signupFormReducer from './reducers/signupForm.js';
+import accountFormReducer from './reducers/accountForm.js';
 import recipeFormReducer from './reducers/recipeForm.js';
 import saladBowlsReducer from './reducers/salad_bowls.js';
 import mealTypeReducer from './reducers/mealType.js';
@@ -15,8 +16,10 @@ const reducer = combineReducers({
   signupForm: signupFormReducer,
   mealType: mealTypeReducer,
   saladBowls: saladBowlsReducer,
-  recipeForm: recipeFormReducer
+  recipeForm: recipeFormReducer,
+  accountForm: accountFormReducer
 })
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
 
