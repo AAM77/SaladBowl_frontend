@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Styles = styled.div`
-  #salad-bar-button {
+  #salad-bar-button, .meal-buttons {
     display: inline-block;
     padding: 25px 0px 50px 0px;
   }
