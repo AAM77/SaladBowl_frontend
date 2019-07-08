@@ -2,13 +2,12 @@
 // Synchronous Action Creators //
 /////////////////////////////////
 
-export const updateAccount = (userDetails) => {
+export const updateAccount = (accountDetails) => {
   return {
     type: 'UPDATE_USER_ACCOUNT',
-    userDetails
+    accountDetails
   }
 }
-
 
 //////////////////////////////////
 // Asynchronous Action Creators //
@@ -16,7 +15,6 @@ export const updateAccount = (userDetails) => {
 
 export const updateAccountDetails = (accountDetails, userId, history) => {
   return dispatch => {
-    // debugger;
     return fetch(`http://localhost:3001/api/v1/users/${userId}`, {
       method: 'PATCH',
       headers: {
