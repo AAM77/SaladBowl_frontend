@@ -3,11 +3,19 @@ import { Styles } from './OptionsContainerStyles.js';
 import { connect } from 'react-redux';
 import { getAllSaladBowls } from '../../actions/salad_bowls.js';
 import SaladBowls from './SaladBowls.js';
+import { Button, ButtonToolbar } from 'react-bootstrap';
+import { setMealType } from '../../actions/mealType.js';
 
 class OptionsContainer extends Component {
 
   componentDidMount() {
     this.props.getAllSaladBowls();
+  }
+
+  handleSaladSelectionClick = (event, mealType) => {
+    event.preventDefault();
+    this.props.setMealType(mealType);
+    this.props.history.push('/options')
   }
 
   mealSelection = () => {
@@ -24,11 +32,29 @@ class OptionsContainer extends Component {
     return <SaladBowls saladBowls={selectedMealBowls} />
   }
 
+  mealButtons = () => {
+    return(
+      <div class="meal-buttons">
+      <ButtonToolbar>
+        <Button variant="warning" onClick={(event) => this.handleSaladSelectionClick(event, 'breakfast')}>Show Breakfast Salads</Button>
+      </ButtonToolbar>
+      <br />
+      <ButtonToolbar>
+        <Button variant="warning" onClick={(event) => this.handleSaladSelectionClick(event, 'lunch')}>Show Lunch Salads</Button>
+      </ButtonToolbar>
+      <br />
+      <ButtonToolbar>
+        <Button variant="warning" onClick={(event) => this.handleSaladSelectionClick(event, 'dinner')}>Show Dinner Salads</Button>
+      </ButtonToolbar>
+      </div>
+    )
+  }
+
   render() {
     return(
       <Styles>
         {
-          this.props.mealType ? this.mealSelection() : <p>Loading Salad Bowls</p>
+          this.props.mealType ? this.mealSelection() : <>{this.mealButtons()}</>
         }
       </Styles>
     )
@@ -45,4 +71,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { getAllSaladBowls }) (OptionsContainer);
+export default connect(mapStateToProps, { getAllSaladBowls, setMealType }) (OptionsContainer);
