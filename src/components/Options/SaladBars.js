@@ -12,7 +12,7 @@ const SaladBars = (props) => {
 
   return(
     <div>
-      <h1>SALADBARS NEAR YOU</h1>
+      <h1>SALAD BARS NEAR YOU</h1>
 
       <Map
         google={props.google}
