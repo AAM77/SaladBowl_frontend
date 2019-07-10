@@ -21,30 +21,35 @@ class OptionsContainer extends Component {
   mealSelection = () => {
     let selectedMealBowls;
 
-    if (this.props.mealType === "breakfast") {
+    if (this.props.mealType === "Breakfast") {
       selectedMealBowls = this.props.allBreakfastBowls
-    } else if (this.props.mealType === "lunch") {
+    } else if (this.props.mealType === "Lunch") {
       selectedMealBowls =  this.props.allLunchBowls
-    } else if (this.props.mealType === "dinner") {
+    } else if (this.props.mealType === "Dinner") {
       selectedMealBowls =  this.props.allDinnerBowls
     }
 
-    return <SaladBowls saladBowls={selectedMealBowls} />
+    return (
+      <div>
+        <h1>{this.props.mealType} Bowls</h1>
+        <SaladBowls saladBowls={selectedMealBowls} />
+      </div>
+    )
   }
 
   mealButtons = () => {
     return(
       <div class="meal-buttons">
       <ButtonToolbar>
-        <Button variant="warning" onClick={(event) => this.handleSaladSelectionClick(event, 'breakfast')}>Show Breakfast Salads</Button>
+        <Button variant="warning" onClick={(event) => this.handleSaladSelectionClick(event, 'Breakfast')}>Show Breakfast Salads</Button>
       </ButtonToolbar>
       <br />
       <ButtonToolbar>
-        <Button variant="warning" onClick={(event) => this.handleSaladSelectionClick(event, 'lunch')}>Show Lunch Salads</Button>
+        <Button variant="warning" onClick={(event) => this.handleSaladSelectionClick(event, 'Lunch')}>Show Lunch Salads</Button>
       </ButtonToolbar>
       <br />
       <ButtonToolbar>
-        <Button variant="warning" onClick={(event) => this.handleSaladSelectionClick(event, 'dinner')}>Show Dinner Salads</Button>
+        <Button variant="warning" onClick={(event) => this.handleSaladSelectionClick(event, 'Dinner')}>Show Dinner Salads</Button>
       </ButtonToolbar>
       </div>
     )
