@@ -18,7 +18,7 @@ class UserHomeContainer extends Component {
               <h1>Welcome, {this.props.currentUser.username}!</h1>
               <h4>Your location: U.S.</h4>
               <div id="salad-bar-button">
-                <Link to="/saladbars" id="url-link">
+                <Link to="/salad_bars" id="url-link">
                   <ButtonToolbar>
                     <Button variant="warning">Find a Salad Bar Near You</Button>
                   </ButtonToolbar>
