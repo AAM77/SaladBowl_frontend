@@ -28,15 +28,12 @@ class NavigationBarContainer extends Component {
       <Dropdown as={NavItem}>
         <Dropdown.Toggle as={NavLink}>Salad Options</Dropdown.Toggle>
         <Dropdown.Menu className="dropdown-menu-right">
-          <Dropdown.Item onClick={(event) => this.handleSaladSelectionClick(event, 'breakfast')}>Suggest Breakfast Bowls</Dropdown.Item>
-          <Dropdown.Item onClick={(event) => this.handleSaladSelectionClick(event, 'lunch')}>Suggest Lunch Bowls</Dropdown.Item>
-          <Dropdown.Item onClick={(event) => this.handleSaladSelectionClick(event, 'dinner')}>Suggest Dinner Bowls</Dropdown.Item>
-          <Dropdown.Item as={Link} to="/">Suggest a Salad Bar</Dropdown.Item>
+          <Dropdown.Item onClick={(event) => this.handleSaladSelectionClick(event, 'Breakfast')}>Suggest Breakfast Bowls</Dropdown.Item>
+          <Dropdown.Item onClick={(event) => this.handleSaladSelectionClick(event, 'Lunch')}>Suggest Lunch Bowls</Dropdown.Item>
+          <Dropdown.Item onClick={(event) => this.handleSaladSelectionClick(event, 'Dinner')}>Suggest Dinner Bowls</Dropdown.Item>
           <Dropdown.Item as={Link} to="/new_recipe_form">Submit a New Recipe</Dropdown.Item>
-          <Dropdown.Item as={Link} to="/">Customize Preferences</Dropdown.Item>
           <NavDropdown.Divider />
           <NavDropdown.Divider />
-          <Dropdown.Item as={Link} to="/">Favorite Bowls</Dropdown.Item>
           <Dropdown.Item as={Link} to="/account">Account</Dropdown.Item>
           <Dropdown.Item onClick={this.handleLogoutClick}>Log Out</Dropdown.Item>
         </Dropdown.Menu>
@@ -62,8 +59,8 @@ class NavigationBarContainer extends Component {
 
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <Nav.Item><Nav.Link as={Link} to="/about">About</Nav.Link></Nav.Item>
             {this.props.currentUser ? this.currentUserOptions() : this.guestUserOptions()}
+            <Nav.Item><Nav.Link as={Link} to="/about">About</Nav.Link></Nav.Item>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -77,3 +74,8 @@ const mapStateToProps = (state) => {
 }
 
 export default withRouter(connect(mapStateToProps, { logout, setMealType }) (NavigationBarContainer));
+
+
+// <Dropdown.Item as={Link} to="/">Customize Preferences</Dropdown.Item>
+// <Dropdown.Item as={Link} to="/">Suggest a Salad Bar</Dropdown.Item>
+// <Dropdown.Item as={Link} to="/">Favorite Bowls</Dropdown.Item>
