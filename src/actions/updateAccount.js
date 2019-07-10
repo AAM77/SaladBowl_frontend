@@ -28,6 +28,7 @@ export const updateAccountDetails = (accountDetails, userId, history) => {
         alert(response.error)
       } else {
         dispatch(updateAccount(response))
+        alert("ACCOUNT DETAILS SUCCESSFULLY UPDATED!")
       }
     })
     .catch(console.log)
