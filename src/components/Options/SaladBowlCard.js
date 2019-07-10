@@ -7,7 +7,8 @@ const SaladBowlCard = ( { saladBowl }) => {
 
   return(
     <div>
-      <h5>{saladBowl.name} {saladBowl.id}</h5>
+      <h4>{saladBowl.name}</h4>
+      <br />
       <div>
         {ingredients()}
       </div>
