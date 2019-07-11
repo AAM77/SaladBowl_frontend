@@ -1,68 +1,68 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# SaladBowl
 
-## Available Scripts
+## [ NOTE 1 ]: This is the front end of the application I created. Therefore, both have similar READMEs.
+## [ NOTE 2 ]: I will return to this app to clean up the code and add more features as soon as I finish the Flatiron School curriculum.
 
-In the project directory, you can run:
 
-### `npm start`
+## Background
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+One of my friends provided the inspiration for this application. In its current state, it returns randomly selected meals for a specific time of day.<br />
+<br />
+This application is split into two parts: <br />
+(1) Back End: built using Ruby on Rails <br />
+(2) Front End: built using JavaScript with React & Redux <br />
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
 
-### `npm test`
+## Description
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+A limited list of features for the app include:
 
-### `npm run build`
+(1) Users can visit an 'About page'.<br />
+(2) Users can visit a 'Log In' page to sign in using existing credentials.<br />
+(3) Users can visit a 'Register' page to create a new account.<br />
+(4) Users can visit a 'Breakfast Suggestions' page to get a list of four breakfast bowl suggestions.<br />
+(5) Users can visit a 'Lunch Suggestions' page to get a list of four lunch bowl suggestions.<br />
+(6) Users can visit a 'Dinner Suggestions' page to get a list of four dinner bowl suggestions.<br />
+(7) Users can visit a 'Submit a Recipe' to visit a form they can fill out to suggest new salad bowl recipe.<br />
+(8) Users can visit an 'Account' page to update their account information.<br />
+(9) Users can click on the 'Log Out' option from the navigation bar to sign out.<br />
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Built With
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+ [ TO DO ]
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Plans
 
-### `npm run eject`
+The app is not complete yet. I am currently refactoring and cleaning up the application to remove unnecessary files and code. Once this is done, I will begin adding new features or modifying existing ones.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Installation
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+You can clone or download this repository to your machine and follow the instructions below to run it.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Usage
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+[ TO DO ]
 
-## Learn More
+## Development
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[ TO DO ]
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Authors
 
-### Code Splitting
+* **Mohammad Adeel**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Contributing
 
-### Analyzing the Bundle Size
+[ TO DO ]
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Code of Conduct
 
-### Making a Progressive Web App
+[ TO DO ]
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## Versioning
 
-### Advanced Configuration
+[ TO DO ]
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+## License
 
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This application is not available for use by anyone.
