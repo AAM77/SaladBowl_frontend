@@ -70,9 +70,9 @@ const mapStateToProps = (state) => {
   return {
     mealType: state.mealType,
     allSaladBowls: state.saladBowls,
-    allBreakfastBowls: state.saladBowls.filter( saladBowl => saladBowl.meal_time_frame === 'breakfast'),
-    allLunchBowls: state.saladBowls.filter( saladBowl => saladBowl.meal_time_frame === 'lunch'),
-    allDinnerBowls: state.saladBowls.filter( saladBowl => saladBowl.meal_time_frame === 'dinner')
+    allBreakfastBowls: state.saladBowls.breakfastBowls,
+    allLunchBowls: state.saladBowls.lunchBowls,
+    allDinnerBowls: state.saladBowls.dinnerBowls
   }
 }
 
