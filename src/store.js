@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
-import currentUserReducer from './reducers/currentUser.js';
+import currentUserReducer from './reducers/session.js';
 import loginFormReducer from './reducers/loginForm.js';
 import signupFormReducer from './reducers/signupForm.js';
 import accountFormReducer from './reducers/accountForm.js';

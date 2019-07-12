@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import LoginForm from './LoginForm.js';
 import Logout from './Logout.js';
 import { connect } from 'react-redux';
-import { login, getCurrentUser } from '../../actions/currentUser.js';
+import { login, getCurrentUser } from '../../actions/session.js';
 import { updateLoginForm } from '../../actions/loginForm.js';
 
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import SignupForm from './SignupForm.js';
 import Logout from '../Login/Logout.js';
 import { connect } from 'react-redux';
-import { getCurrentUser } from '../../actions/currentUser.js';
+import { getCurrentUser } from '../../actions/session.js';
 import { updateSignupForm } from '../../actions/signupForm.js';
 import { signup } from "../../actions/newUser.js";
 import { withRouter } from 'react-router-dom';

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { Styles } from './NavigationBarStyles.js';
 import { connect } from 'react-redux';
 
-import { logout } from '../../actions/currentUser.js';
+import { logout } from '../../actions/session.js';
 import { setMealType } from '../../actions/mealType.js';
 import { withRouter } from 'react-router-dom';
 

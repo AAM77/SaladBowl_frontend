@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getCurrentUser } from '../../actions/currentUser.js';
+import { getCurrentUser } from '../../actions/session.js';
 
 import About from '../About/About.js';
 import LandingContainer from '../Landing/LandingContainer.js';

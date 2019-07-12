@@ -1,5 +1,5 @@
 import { resetForm } from './resetForm.js';
-import { setCurrentUser } from './currentUser.js';
+import { setCurrentUser } from './session.js';
 
 /////////////////////////////////
 // Synchronous Action Creators //

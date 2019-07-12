@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Button } from 'react-bootstrap';
-import { getCurrentUser } from '../../actions/currentUser.js';
+import { getCurrentUser } from '../../actions/session.js';
 import { updateAccountForm } from '../../actions/accountForm.js';
 import { updateAccountDetails } from '../../actions/updateAccount.js';
 import { connect } from 'react-redux';
