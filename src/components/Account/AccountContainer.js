@@ -77,7 +77,7 @@ class AccountContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    currentUser: state.currentUser,
+    currentUser: state.session.currentUser,
     accountDetails: state.accountForm
    }
 }
