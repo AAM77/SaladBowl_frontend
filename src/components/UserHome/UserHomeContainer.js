@@ -36,7 +36,7 @@ class UserHomeContainer extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return { currentUser: state.currentUser }
+  return { currentUser: state.session.currentUser }
 }
 
 export default withRouter(connect(mapStateToProps)(UserHomeContainer));
