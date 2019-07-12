@@ -7,7 +7,7 @@ export default (state = initialState, action) => {
     case "SET_CURRENT_USER":
       return {...state, currentUser: action.user}
     case "LOGOUT_CURRENT_USER":
-      return {currentUser: ""}
+      return {...state, currentUser: ""}
     default:
       return state
   }
