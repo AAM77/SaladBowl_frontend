@@ -51,7 +51,7 @@ class LandingPage extends Component {
 const mapStateToProps = state => {
   return{
     loginFormData: state.loginForm,
-    currentUser: state.currentUser
+    currentUser: state.session.currentUser
   }
 }
 

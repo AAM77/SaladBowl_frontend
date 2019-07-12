@@ -60,7 +60,7 @@ class SignupContainer extends Component {
 const mapStateToProps = state => {
   return {
     signupFormData: state.signupForm,
-    currentUser: state.currentUser
+    currentUser: state.session.currentUser
   }
 }
 
