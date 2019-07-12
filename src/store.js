@@ -9,7 +9,7 @@ import mealTypeReducer from './reducers/mealType.js';
 import thunk from 'redux-thunk';
 
 const reducer = combineReducers({
-  currentUser: currentUserReducer,
+  session: currentUserReducer,
   loginForm: loginFormReducer,
   signupForm: signupFormReducer,
   mealType: mealTypeReducer,
