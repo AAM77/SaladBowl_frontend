@@ -6,7 +6,7 @@ import { login, getCurrentUser } from '../../actions/session.js';
 import { updateLoginForm } from '../../actions/loginForm.js';
 
 
-class LandingPage extends Component {
+class LoginContainer extends Component {
 
   handleInputChange = (event) => {
     const { name, value } = event.target
@@ -55,4 +55,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { login, updateLoginForm, getCurrentUser }) (LandingPage);
+export default connect(mapStateToProps, { login, updateLoginForm, getCurrentUser }) (LoginContainer);
