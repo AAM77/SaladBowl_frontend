@@ -4,7 +4,6 @@ import Logout from '../Login/Logout.js';
 import { connect } from 'react-redux';
 import { updateSignupForm } from '../../actions/accountForms.js';
 import { signup } from "../../actions/userAccount.js";
-import { withRouter } from 'react-router-dom';
 
 
 class SignupContainer extends Component {
@@ -63,4 +62,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { updateSignupForm, signup }) (withRouter(SignupContainer));
+export default connect(mapStateToProps, { updateSignupForm, signup }) (SignupContainer);
