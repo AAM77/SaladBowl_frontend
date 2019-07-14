@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Form, Button } from 'react-bootstrap';
-import { getCurrentUser } from '../../actions/session.js';
 import { updateAccountForm } from '../../actions/accountForms.js';
 import { updateAccountDetails, deleteAccount } from '../../actions/userAccount.js';
 import { connect } from 'react-redux';
@@ -92,4 +91,4 @@ const mapStateToProps = (state) => {
    }
 }
 
-export default connect(mapStateToProps, { getCurrentUser, updateAccountForm, updateAccountDetails, deleteAccount })(AccountContainer);
+export default connect(mapStateToProps, { updateAccountForm, updateAccountDetails, deleteAccount })(AccountContainer);

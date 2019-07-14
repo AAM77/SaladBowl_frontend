@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import SignupForm from './SignupForm.js';
 import Logout from '../Login/Logout.js';
 import { connect } from 'react-redux';
-import { getCurrentUser } from '../../actions/session.js';
 import { updateSignupForm } from '../../actions/accountForms.js';
 import { signup } from "../../actions/userAccount.js";
 import { withRouter } from 'react-router-dom';
@@ -17,7 +16,7 @@ class SignupContainer extends Component {
       ...this.props.signupFormData,
       [name]: value
     }
-    
+
     this.props.updateSignupForm(updatedFormInfo);
   }
 
@@ -64,4 +63,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { updateSignupForm, signup, getCurrentUser }) (withRouter(SignupContainer));
+export default connect(mapStateToProps, { updateSignupForm, signup }) (withRouter(SignupContainer));

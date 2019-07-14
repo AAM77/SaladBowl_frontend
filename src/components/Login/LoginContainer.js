@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import LoginForm from './LoginForm.js';
 import Logout from './Logout.js';
 import { connect } from 'react-redux';
-import { login, getCurrentUser } from '../../actions/session.js';
+import { login } from '../../actions/session.js';
 import { updateLoginForm } from '../../actions/accountForms.js';
 
 
@@ -55,4 +55,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { login, updateLoginForm, getCurrentUser }) (LoginContainer);
+export default connect(mapStateToProps, { login, updateLoginForm }) (LoginContainer);
