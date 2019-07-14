@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import currentUserReducer from './reducers/session.js';
 import userFormsReducer from './reducers/accountForms.js';
 import recipeFormReducer from './reducers/recipeForm.js';
-import saladBowlsReducer from './reducers/salad_bowls.js';
+import saladBowlsReducer from './reducers/saladBowls.js';
 import mealTypeReducer from './reducers/mealType.js';
 import thunk from 'redux-thunk';
 

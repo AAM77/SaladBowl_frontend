@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Styles } from './OptionsContainerStyles.js';
 import { connect } from 'react-redux';
-import { getAllSaladBowls } from '../../actions/salad_bowls.js';
+import { getAllSaladBowls } from '../../actions/saladBowls.js';
 import SaladBowls from './SaladBowls.js';
 import { Button, ButtonToolbar } from 'react-bootstrap';
 import { setMealType } from '../../actions/mealType.js';
