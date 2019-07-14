@@ -39,7 +39,7 @@ class OptionsContainer extends Component {
 
   mealButtons = () => {
     return(
-      <div class="meal-buttons">
+      <div className="meal-buttons">
       <ButtonToolbar>
         <Button variant="warning" onClick={(event) => this.handleSaladSelectionClick(event, 'Breakfast')}>Show Breakfast Salads</Button>
       </ButtonToolbar>
