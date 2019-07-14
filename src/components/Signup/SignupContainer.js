@@ -3,7 +3,7 @@ import SignupForm from './SignupForm.js';
 import Logout from '../Login/Logout.js';
 import { connect } from 'react-redux';
 import { getCurrentUser } from '../../actions/session.js';
-import { updateSignupForm } from '../../actions/signupForm.js';
+import { updateSignupForm } from '../../actions/accountForms.js';
 import { signup } from "../../actions/userAccount.js";
 import { withRouter } from 'react-router-dom';
 
@@ -17,7 +17,7 @@ class SignupContainer extends Component {
       ...this.props.signupFormData,
       [name]: value
     }
-
+    
     this.props.updateSignupForm(updatedFormInfo);
   }
 
@@ -59,7 +59,7 @@ class SignupContainer extends Component {
 // = ( { currentUser } ) =>
 const mapStateToProps = state => {
   return {
-    signupFormData: state.signupForm,
+    signupFormData: state.userForms.signupForm,
     currentUser: state.session.currentUser
   }
 }

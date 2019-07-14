@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { getCurrentUser } from '../../actions/session.js';
-import { updateAccountForm } from '../../actions/accountForm.js';
+import { updateAccountForm } from '../../actions/accountForms.js';
 import { updateAccountDetails, deleteAccount } from '../../actions/userAccount.js';
 import { connect } from 'react-redux';
 import { Styles } from './AccountContainerStyles.js';
@@ -88,7 +88,7 @@ class AccountContainer extends Component {
 const mapStateToProps = (state) => {
   return {
     currentUser: state.session.currentUser,
-    accountDetails: state.accountForm
+    accountDetails: state.userForms.updateForm
    }
 }
 

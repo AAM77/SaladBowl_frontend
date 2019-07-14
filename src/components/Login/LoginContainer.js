@@ -3,7 +3,7 @@ import LoginForm from './LoginForm.js';
 import Logout from './Logout.js';
 import { connect } from 'react-redux';
 import { login, getCurrentUser } from '../../actions/session.js';
-import { updateLoginForm } from '../../actions/loginForm.js';
+import { updateLoginForm } from '../../actions/accountForms.js';
 
 
 class LoginContainer extends Component {
@@ -50,7 +50,7 @@ class LoginContainer extends Component {
 
 const mapStateToProps = state => {
   return{
-    loginFormData: state.loginForm,
+    loginFormData: state.userForms.loginForm,
     currentUser: state.session.currentUser
   }
 }
