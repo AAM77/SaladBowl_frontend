@@ -1,3 +1,5 @@
+import { resetForm } from './resetForm.js';
+
 //////////////////////////////////
 // Asynchronous Action Creators //
 //////////////////////////////////
@@ -14,10 +16,10 @@ export const createNewRecipe = (recipeFormData, history) => {
     .then(r => r.json())
     .then(response => {
       if (response.error) {
-        alert(response.error)
+        alert(response.error);
       } else {
-        history.push('/options')
-        alert("Successfully submitted the recipe.")
+        dispatch(resetForm());
+        alert("Successfully submitted the recipe.");
       }
     })
   }
