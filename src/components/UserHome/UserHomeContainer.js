@@ -3,7 +3,6 @@ import { ButtonToolbar, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Styles } from './UserHomeContainerStyles.js';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 
 
 class UserHomeContainer extends Component {
@@ -39,4 +38,4 @@ const mapStateToProps = (state) => {
   return { currentUser: state.session.currentUser }
 }
 
-export default withRouter(connect(mapStateToProps)(UserHomeContainer));
+export default connect(mapStateToProps)(UserHomeContainer);
