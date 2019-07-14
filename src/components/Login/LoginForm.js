@@ -18,7 +18,7 @@ const LoginForm = ( { loginFormData, updateLoginForm, login, handleSubmit, handl
 
           <Form.Group controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
-            <Form.Control placeholder="Enter Username" value={loginFormData.password} name="password" type="password" onChange={(event) => handleInputChange(event)} />
+            <Form.Control placeholder="Enter Password" value={loginFormData.password} name="password" type="password" onChange={(event) => handleInputChange(event)} />
           </Form.Group>
 
           <Button variant="primary" value="Log In" type="submit">
