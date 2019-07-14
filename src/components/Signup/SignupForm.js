@@ -10,15 +10,14 @@ const SignupForm = ( { signupFormData, updateSignupForm, signup, handleSubmit, h
     <Styles>
       <div className="signup-form">
         <Form onSubmit={(event) => handleSubmit(event)}>
+          <Form.Group controlId="formBasicUsername">
+            <Form.Label>Username</Form.Label>
+            <Form.Control placeholder="Enter Username" value={signupFormData.username} name="username" type="text" onChange={(event) => handleInputChange(event)} required/>
+          </Form.Group>
 
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Email</Form.Label>
             <Form.Control placeholder="Enter Email" value={signupFormData.email} name="email" type="email" onChange={(event) => handleInputChange(event)} required/>
-          </Form.Group>
-
-          <Form.Group controlId="formBasicUsername">
-            <Form.Label>Username</Form.Label>
-            <Form.Control placeholder="Enter Username" value={signupFormData.username} name="username" type="text" onChange={(event) => handleInputChange(event)} required/>
           </Form.Group>
 
           <Form.Group controlId="formBasicPassword">
