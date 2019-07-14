@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { getCurrentUser } from '../../actions/session.js';
 import { updateAccountForm } from '../../actions/accountForm.js';
-import { updateAccountDetails } from '../../actions/updateAccount.js';
+import { updateAccountDetails, deleteAccount } from '../../actions/userAccount.js';
 import { connect } from 'react-redux';
-
 import { Styles } from './AccountContainerStyles.js';
 
 class AccountContainer extends Component {
@@ -23,6 +22,13 @@ class AccountContainer extends Component {
   handleOnSubmit = (event) => {
     event.preventDefault();
     this.props.updateAccountDetails(this.props.accountDetails, this.props.currentUser.id, this.props.history);
+  }
+
+  handleDeleteAccount = (event) => {
+    event.preventDefault();
+    if (window.confirm('Are you sure you wish to delete your account? This action is IRREVERSIBLE!')) {
+      this.props.deleteAccount(this.props.currentUser.id, this.props.history)
+    }
   }
 
   render() {
@@ -66,6 +72,10 @@ class AccountContainer extends Component {
                 Update
               </Button>
             </Form>
+
+            <br />
+
+            <Button variant="danger" onClick={(event) => this.handleDeleteAccount(event)}>Delete Account</Button>
           </div>
           :
           <p>No One is Logged In</p>
@@ -82,4 +92,4 @@ const mapStateToProps = (state) => {
    }
 }
 
-export default connect(mapStateToProps, { getCurrentUser, updateAccountDetails, updateAccountForm })(AccountContainer);
+export default connect(mapStateToProps, { getCurrentUser, updateAccountForm, updateAccountDetails, deleteAccount })(AccountContainer);
