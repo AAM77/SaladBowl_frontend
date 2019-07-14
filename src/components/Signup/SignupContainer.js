@@ -22,8 +22,6 @@ class SignupContainer extends Component {
   handleSubmit = event => {
     event.preventDefault();
     this.props.signup(this.props.signupFormData, this.props.history);
-
-    //this.props.history.push('/login');
   }
 
   render() {
@@ -54,7 +52,6 @@ class SignupContainer extends Component {
 }
 
 
-// = ( { currentUser } ) =>
 const mapStateToProps = state => {
   return {
     signupFormData: state.userForms.signupForm,
