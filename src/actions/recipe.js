@@ -1,16 +1,3 @@
-
-/////////////////////////////////
-// Synchronous Action Creators //
-/////////////////////////////////
-
-export const newRecipe = (recipeData) => {
-  return {
-    type: 'CREATE_NEW_SALAD_BOWL',
-    recipeData
-  }
-}
-
-
 //////////////////////////////////
 // Asynchronous Action Creators //
 //////////////////////////////////
@@ -29,8 +16,8 @@ export const createNewRecipe = (recipeFormData, history) => {
       if (response.error) {
         alert(response.error)
       } else {
-        dispatch(newRecipe(recipeFormData))
         history.push('/options')
+        alert("Successfully submitted the recipe.")
       }
     })
   }
