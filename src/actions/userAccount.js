@@ -79,5 +79,6 @@ export const deleteAccount = (userId, history) => {
         alert('Account deleted!');
       }
     })
+    .catch(console.log)
   }
 }
