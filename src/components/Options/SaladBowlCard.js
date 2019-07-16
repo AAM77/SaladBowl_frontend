@@ -1,19 +1,39 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Button } from 'react-bootstrap';
 
+class SaladBowlCard extends Component {
 
-const SaladBowlCard = ( { saladBowl }) => {
+  constructor(props) {
+    super(props);
+    this.state = {
+      counter: 0
+    }
+  }
 
-  const ingredients = () => saladBowl.ingredients.map( ingredient => <div key={ingredient.id}>{ingredient.name}</div>)
+  handleVoteClick = (event) => {
 
-  return(
-    <div>
-      <h4>{saladBowl.name}</h4>
-      <br />
+    this.setState({
+      ...this.state,
+      counter: this.state.counter + 1
+    })
+  }
+  ingredients = () => this.props.saladBowl.ingredients.map( ingredient => <div key={ingredient.id}>{ingredient.name}</div>)
+
+  render() {
+    return(
       <div>
-        {ingredients()}
+        <h4>{this.props.saladBowl.name}</h4>
+        <br />
+        <div>
+          {() => this.ingredients()}
+        </div>
+        <break />
+
+        <Button onClick={(event) => this.handleVoteClick(event)}>Upvote</Button>
+        <p>{this.state.counter} Votes</p>
       </div>
-    </div>
-  )
+    )
+  }
 }
 
 export default SaladBowlCard;
