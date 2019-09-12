@@ -27,8 +27,10 @@ A limited list of features for the app include:
 
 ## Built With
 
-* [Rails](https://guides.rubyonrails.org/) - The web framework used
-* [ActiveRecord](https://guides.rubyonrails.org/active_record_basics.html) - For Handling Database communication and Model Associations.
+* [JavaScript](https://www.javascript.com/) - The Language
+* [ReactJS](https://reactjs.org/) - A JavaScript Library
+* [Redux](https://redux.js.org/) - A JavaScript Library
+* [Thunk](https://github.com/reduxjs/redux-thunk)
 
 
 ## Authors
@@ -42,8 +44,6 @@ The application is a work in progress. I will return to it September 21, 2019 to
 ## Installation
 
 Clone or download this repository to your machine. Go to the front-end repository and clone or download it as well. Then, follow the Usage instructions below.
-
-
 
 
 
